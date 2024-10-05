@@ -8,14 +8,20 @@ function setup() {
   let pitch = 100;
   let sqDim = 0.9 * pitch;
   translate(pitch / 2, pitch / 2);
-
+//   for(let cnt=0; cnt<10; cnt++){
+//   print(random(10,100));
+// }
+// randomSeed(1010);
   // draw a column of rows
   for (let y = 0; y < height; y += pitch) {
     // draw a row of squares
     for (let x = 0; x < width; x += pitch) {
+      let dd = random(sqDim/2, sqDim);
+      let vx = random(-20, 20);
+      let vy = random(-20, 20);
       push();
       translate(x, y);
-      rect(0, 0, sqDim);
+      rect(vx, vy, dd);
       pop();
     }
   }
